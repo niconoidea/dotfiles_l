@@ -1,0 +1,16 @@
+set $border_color_focused      #88c0d0
+set $border_color_unfocused    #4c566a
+set $border_color_inactive     #434c5e
+set $border_color_urgent       #bf616a
+
+set $background_color_focused  #2e3440
+set $background_color_unfocused #3b4252
+
+set $text_color_focused        #eceff4
+set $text_color_unfocused      #d8dee9
+
+set $indicator_color           #88c0d0
+set $placeholder_color         #4c566a
+
+output * bg /home/nico/Pictures/wallpaper/nordic_scenery.png fill
+

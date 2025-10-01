@@ -1,0 +1,15 @@
+set $border_color_focused      #ff7f50
+set $border_color_unfocused    #44444499
+set $border_color_inactive     #ff6347
+set $border_color_urgent       #ff0000 
+
+set $background_color_focused  #3b3b3bE6
+set $background_color_unfocused #2a2a2a99
+
+set $text_color_focused         #ffcc99
+set $text_color_unfocused       #b0b0b0
+
+set $indicator_color            #ff7f50
+set $placeholder_color         #666666 
+
+output * bg /home/nico/Pictures/wallpaper/again_mountains.jpg fill

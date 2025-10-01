@@ -1,0 +1,15 @@
+set $border_color_focused      #e07a5f
+set $border_color_unfocused    #6b4226
+set $border_color_inactive     #a98467
+set $border_color_urgent       #d62828
+
+set $background_color_focused  #2a1f1a
+set $background_color_unfocused #1d1410
+
+set $text_color_focused        #fefae0
+set $text_color_unfocused      #e6ccb2
+
+set $indicator_color           #f4a261
+set $placeholder_color         #6b4226
+
+output * bg /home/nico/Pictures/wallpaper/terracotta.jpg fill

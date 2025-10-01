@@ -1,0 +1,15 @@
+set $border_color_focused      #268bd2
+set $border_color_unfocused    #073642
+set $border_color_inactive     #586e75
+set $border_color_urgent       #dc322f
+
+set $background_color_focused  #002b36
+set $background_color_unfocused #073642
+
+set $text_color_focused        #839496
+set $text_color_unfocused      #657b83
+
+set $indicator_color           #268bd2
+set $placeholder_color         #586e75
+
+output * bg /home/nico/Pictures/wallpaper/solazied_dark.png fill

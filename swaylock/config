@@ -1,0 +1,13 @@
+ignore-empty-password
+font=Roboto
+
+image=~/Pictures/wallpaper/gray_forest.jpg
+
+# Set the password prompt text color
+text-color=ffffff
+
+ignore-empty-password
+
+indicator-caps-lock
+
+indicator-thickness=7

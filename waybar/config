@@ -1,0 +1,197 @@
+
+{
+     "layer": "top", // Waybar at top layer
+     "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 22, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media","custom/brightness","pulseaudio"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/clipboard","bluetooth","network","cpu","custom/cputemp","memory","battery", "clock", "custom/power", "tray"],
+
+// for hidden bar
+//  "bar_id": "bar-0",
+//  "ipc": true,  
+
+
+    // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+//         "format": "{name}: {icon}",
+//         "format-icons": {
+//             "1": "1",
+//             "2": "2",
+//             "3": "3",
+//             "4": "4",
+//             "5": "5",
+//             "urgent": "URGENT",
+             "focused": "O",
+//             "default": "DEFAULT"
+//         }
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+//    "mpd": {
+//        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
+//        "format-disconnected": "Disconnected ",
+//        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+//        "unknown-tag": "N/A",
+//        "interval": 2,
+//        "consume-icons": {
+//            "on": " "
+//        },
+//        "random-icons": {
+//            "off": "<span color=\"#f53c3c\"></span> ",
+//            "on": " "
+//        },
+//        "repeat-icons": {
+//            "on": " "
+//        },
+//        "single-icons": {
+//            "on": "1 "
+//       },
+//        "state-icons": {
+//            "paused": "",
+//            "playing": ""
+//        },
+//        "tooltip-format": "MPD (connected)",
+//        "tooltip-format-disconnected": "MPD (disconnected)"
+//    },
+//    "backlight": {
+//	"format": "{percent}%"
+//    },
+    "custom/brightness": {
+        "exec": "~/.config/waybar/scripts/brightness.sh",
+        "interval": 1
+    },
+    "custom/cputemp": {
+//	"format": "{output}°C",
+//	"exec": "sensors | grep 'Core 0' | awk '{print $3}' | tr -d '+°C'",
+//	"format": "sensors | grep 'Core 0' | awk '{print $3}' | tr -d '+'",
+	"exec": "~/.config/waybar/scripts/cputemp.sh",
+	"interval": 5
+    },
+
+
+    "custom/clipboard": {
+	"format": "",
+	"on-click": "cliphist list | wofi --show dmenu -i | cliphist decode | wl-copy"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/power": {
+	"format": "󰐥",
+        "on-click": "~/.config/waybar/scripts/powermenu.sh"
+    },
+    "bluetooth": {
+	"format": "  ",
+	"format-off": "󰂲",
+	"format-on": "",
+	"format-connected": " CON",
+	"format-no-controller": " NO CON",
+	"on-click": "blueman-manager"
+    }, 
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%H:%M }",
+        "format-alt": "{:%a %Y-%m-%d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    },      
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+    },
+// 
+    "memory": {
+        "format": " {}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% ",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "+{capacity}% {icon}",
+        "format-plugged": "{capacity}% {icon}",
+        "format-alt": "{time} ",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat0": {
+        "bat": "BAT0"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+	"on-click-middle": "nm-applet",
+	"format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "󰕾 {volume}%",  //{format_source}",
+        "format-bluetooth": "󰕾 {volume}%",//  {format_source}",
+        "format-bluetooth-muted": " {format_source}",
+        //"format-muted": " {format_source}",
+        "format-muted": " ",
+        //"format-source": "VOL:{volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": " {}",
+        "return-type": "json",
+        "max-length": 40,
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}

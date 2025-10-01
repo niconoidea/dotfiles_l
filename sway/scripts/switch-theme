@@ -1,0 +1,25 @@
+#!/bin/bash
+# Usage: sway-switch-theme <palette-name>
+
+PALETTE=$1
+PALETTE_DIR="$HOME/.config/sway/colors"
+CURRENT="$PALETTE_DIR/current"
+
+if [ -z "$PALETTE" ]; then
+    echo "Usage: $0 <palette-name>"
+    exit 1
+fi
+
+TARGET="$PALETTE_DIR/$PALETTE"
+
+if [ ! -f "$TARGET" ]; then
+    echo "Palette '$PALETTE' does not exist in $PALETTE_DIR"
+    exit 2
+fi
+
+# Update symlink (makes choice persistent)
+ln -sf "$TARGET" "$CURRENT"
+
+# Reload Sway
+swaymsg reload
+

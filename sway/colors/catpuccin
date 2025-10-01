@@ -1,0 +1,15 @@
+set $border_color_focused      #89b4fa
+set $border_color_unfocused    #313244
+set $border_color_inactive     #585b70
+set $border_color_urgent       #f38ba8
+
+set $background_color_focused  #1e1e2e
+set $background_color_unfocused #181825
+
+set $text_color_focused        #cdd6f4
+set $text_color_unfocused      #a6adc8
+
+set $indicator_color           #89b4fa
+set $placeholder_color         #6c7086
+
+output * bg /home/nico/Pictures/wallpaper/catpuccin_1.jpg fill

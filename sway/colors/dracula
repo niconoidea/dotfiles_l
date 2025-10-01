@@ -1,0 +1,16 @@
+set $border_color_focused      #bd93f9
+set $border_color_unfocused    #44475a
+set $border_color_inactive     #6272a4
+set $border_color_urgent       #ff5555
+
+set $background_color_focused  #282a36
+set $background_color_unfocused #21222c
+
+set $text_color_focused        #f8f8f2
+set $text_color_unfocused      #bbbbbb
+
+set $indicator_color           #bd93f9
+set $placeholder_color         #44475a
+
+output * bg /home/nico/Pictures/wallpaper/dracula_castle.jpg fill
+

@@ -1,0 +1,15 @@
+set $border_color_focused      #d79921
+set $border_color_unfocused    #3c3836
+set $border_color_inactive     #665c54
+set $border_color_urgent       #cc241d
+
+set $background_color_focused  #282828
+set $background_color_unfocused #1d2021
+
+set $text_color_focused        #ebdbb2
+set $text_color_unfocused      #a89984
+
+set $indicator_color           #d79921
+set $placeholder_color         #665c54
+
+output * bg /home/nico/Pictures/wallpaper/gruvbox_wave.png fill

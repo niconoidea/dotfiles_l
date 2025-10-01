@@ -1,0 +1,20 @@
+# Theme options
+
+# do disable automatic sorting
+sort_order=none
+
+theme = "default"
+
+# Font settings
+font = "Roboto 11"
+
+# Position and size
+# horizontal
+x = 740
+# vertical
+y = 440
+
+# horizontal
+width = 500
+# vertical
+height = 200

@@ -1,0 +1,18 @@
+# Theme options
+theme = "default"
+
+# Font settings
+font = "Roboto 11"
+
+hide_search=true
+
+# Position and size
+# horizontal
+x = 740
+# vertical
+y = 440
+
+# horizontal
+width = 500
+# vertical
+height = 200

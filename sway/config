@@ -37,6 +37,9 @@ set $notes flatpak run md.obsidian.Obsidian
 set $powermenu ~/.config/waybar/scripts/powermenu.sh
 set $file-manager thunar
 
+### clion kill ###
+
+bindsym --locked XF86Display exec pkill clion
 
 # translucency
 set $bgnd B3
@@ -274,8 +277,8 @@ bindsym $mod+r mode "resize"
 #set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 3%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 3%+
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
     bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
     # Special key to open signal

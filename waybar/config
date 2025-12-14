@@ -5,7 +5,7 @@
     "height": 22, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media","custom/brightness","pulseaudio"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media","custom/brightness","pulseaudio","custom/mic"],
     "modules-center": ["sway/window"],
     "modules-right": ["custom/clipboard","bluetooth","network","cpu","custom/cputemp","memory","battery", "clock", "custom/power", "tray"],
 
@@ -74,6 +74,12 @@
 	"interval": 5
     },
 
+    "custom/mic": {
+	"exec": "~/.config/waybar/scripts/mic.sh",
+	"interval": 1,
+	"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+	"tooltip": "Microphone"
+    },
 
     "custom/clipboard": {
 	"format": "",

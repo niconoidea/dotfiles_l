@@ -5,3 +5,5 @@ from:
 sway
 swaylock
 waybar
+foot
+wofi

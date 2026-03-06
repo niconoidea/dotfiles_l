@@ -1,10 +1,8 @@
 #!/bin/bash
-brightness=$(brightnessctl g)
-max_brightness=$(brightnessctl m)
-percent=$((brightness * 100 / max_brightness))
 
-if [ "$percent" -lt 5 ]; then
-    percent=5
-fi
+IFS=, read -r _ _ _ percent _ <<<"$(brightnessctl -m)"
+percent=${percent%\%}   # strip trailing '%'
 
-echo " $percent"
+(( percent < 5 )) && percent=5
+
+printf ' %s\n' "$percent"

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-if wpctl get-volume @DEFAULT_SOURCE@ | grep -q MUTED; then
+out=$(wpctl get-volume @DEFAULT_SOURCE@)
+if [[ $out == *MUTED* ]]; then
   echo ""
 else
   echo ""

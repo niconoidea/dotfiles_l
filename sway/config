@@ -3,8 +3,9 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-exec waybar # further down in bar section for hidden bar
+exec waybar -c ~/.config/waybar/config_beige -s ~/.config/waybar/style_beige.css
 exec_always ~/.config/sway/scripts/autotiling
+exec_always mako --default-timeout 5000
 #exec mpvpaper -o "--loop-playlist" eDP-1 /home/nico/Pictures/wallpaper/videos/misty-mountain-lake.1920x1080.mp4 & disown
 
 include /home/nico/.config/sway/colors/current
@@ -31,7 +32,7 @@ set $right i
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wofi --show drun
+set $menu "wofi --show drun --config=/home/nico/.config/wofi/config_beige --style=/home/nico/.config/wofi/style_beige.css"
 set $browser flatpak run app.zen_browser.zen
 set $notes flatpak run md.obsidian.Obsidian
 set $powermenu ~/.config/waybar/scripts/powermenu.sh

@@ -6,7 +6,7 @@ y=0
 
 CHOICES="Lock\nLogout\nSleep\nReboot\nShutdown"
 
-CHOICE=$(echo -e "$CHOICES" | wofi --dmenu -s /home/nico/.config/wofi/style_dropdown.css -c ~/.config/wofi/config_dropdown --x $x --y $y --width 150 --height 195)
+CHOICE=$(echo -e "$CHOICES" | wofi --dmenu -s /home/nico/.config/wofi/style_dropdown_beige.css -c ~/.config/wofi/config_dropdown_beige --x $x --y $y --width 150 --height 140)
 
 case "$CHOICE" in
     Lock) swaylock ;;

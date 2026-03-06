@@ -7,4 +7,4 @@ if [ "$percent" -lt 5 ]; then
     percent=5
 fi
 
-echo " $percent%"
+echo " $percent"

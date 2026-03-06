@@ -1,0 +1,56 @@
+### --- Colors (beige / black / white) -------------------------------
+# Base
+set $black                   #0B0B0C
+set $black_alt               #111113
+set $white                   #F2F2F2
+set $white_dim               #CFCFCF
+set $beige                   #D6C3A5
+set $beige_dim               #BFA98A
+
+# Your requested variables
+set $background_color_focused    $black_alt
+set $background_color_unfocused  $black
+
+set $text_color_focused          $white
+set $text_color_unfocused        $white_dim
+
+set $border_color_focused        $beige
+set $border_color_unfocused      #2A2A2A
+set $border_color_inactive       #1C1C1E
+
+# Keep “urgent” within the black/white/beige vibe:
+set $border_color_urgent         $white
+
+# Indicator + placeholder
+set $indicator_color             $beige
+set $placeholder_color           $beige_dim
+
+
+### --- Client colors -------------------------------------------------
+# Focused window (active)
+client.focused          $border_color_focused   $background_color_focused \
+                        $text_color_focused     $indicator_color \
+                        $border_color_focused
+
+# Unfocused window
+client.unfocused        $border_color_unfocused $background_color_unfocused \
+                        $text_color_unfocused   $border_color_unfocused \
+                        $border_color_unfocused
+
+# Inactive (not focused but not urgent)
+client.focused_inactive $border_color_inactive  $background_color_unfocused \
+                        $text_color_unfocused   $border_color_inactive \
+                        $border_color_inactive
+
+# Urgent windows
+client.urgent           $border_color_urgent    $background_color_unfocused \
+                        $text_color_unfocused   $border_color_urgent \
+                        $border_color_urgent
+
+# Placeholder (for special cases, rare in Sway)
+client.placeholder      $placeholder_color      $background_color_unfocused \
+                        $text_color_unfocused   $placeholder_color \
+                        $placeholder_color
+
+output * bg /home/nico/Pictures/wallpaper/dark_hills.jpg fill
+

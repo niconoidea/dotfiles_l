@@ -1,0 +1,83 @@
+/* Sway-matching palette */
+@define-color black      #0B0B0C;
+@define-color black_alt  #111113;
+@define-color white      #F2F2F2;
+@define-color white_dim  #CFCFCF;
+@define-color beige      #D6C3A5;
+@define-color border     #2A2A2A;
+@define-color inactive   #1C1C1E;
+
+* {
+  font-family: Roboto;
+  font-size: 11pt;
+}
+
+window {
+  background-color: @black;
+  color: @white;
+  border: 1px solid @border;
+}
+
+#outer-box {
+  padding: 10px;
+}
+
+/* Remove/override the blue focus ring */
+#input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: @beige;            /* or @inactive / @border */
+}
+
+/* Some themes draw it via :focus-visible */
+#input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: @beige;
+}
+
+#input {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background-color: @black_alt;
+  color: @white;
+  border: 1px solid @inactive;
+}
+
+#inner-box {
+  margin-top: 2px;
+}
+
+#entry {
+  padding: 8px 10px;
+  color: @white_dim;
+}
+
+#entry:selected {
+  background-color: @beige;
+  color: @black;
+}
+
+#entry:selected #text {
+  color: @black;
+}
+
+#text {
+  margin-left: 8px;
+}
+
+#img {
+  margin-right: 6px;
+}
+
+/* Force sharp corners + remove GTK focus styling on the search input */
+window, #input, #entry, #entry:selected {
+  border-radius: 0px;
+  -gtk-outline-radius: 0px;
+}
+
+#input:focus, #input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-image: none;
+}

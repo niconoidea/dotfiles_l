@@ -1,0 +1,112 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 22,
+  "modules-left": ["sway/workspaces", "sway/mode", "custom/media", "custom/brightness", "pulseaudio", "custom/mic"],
+  "modules-right": ["bluetooth", "network", "custom/cputemp", "memory", "battery", "clock", "custom/power", "tray"],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+
+  "custom/brightness": {
+    "exec": "~/.config/waybar/scripts/brightness.sh",
+    "interval": "once",
+    "signal": 8
+  },
+  "custom/cputemp": {
+    "exec": "~/.config/waybar/scripts/cputemp.sh",
+    "interval": 10
+  },
+  "custom/mic": {
+    "exec": "~/.config/waybar/scripts/mic.sh",
+    "interval": "once",
+    "signal": 9,
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+9 waybar",
+    "tooltip": "Microphone"
+  },
+
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "~/.config/waybar/scripts/powermenu.sh"
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-off": "󰂲",
+    "format-on": "",
+    "format-connected": "",
+    "format-no-controller": "",
+    "on-click": "blueman-manager"
+  },
+
+  "tray": { "spacing": 10 },
+
+  "clock": {
+    "format": "{:%H:%M }",
+    "timezone": "Europe/Berlin",
+    "format-alt": "{:%a %Y-%m-%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "memory": { "format": "", "format-alt": " {}% " },
+
+  "battery": {
+    "states": { "good": 95, "warning": 30, "critical": 15 },
+    "format": "{capacity} {icon}",
+    "format-charging": "+{capacity} {icon}",
+    "format-plugged": "{capacity} {icon}",
+    "format-plugged-alt": "+{capacity} {icon}",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "network": {
+    "on-click-middle": "nm-applet",
+    "format-wifi": "",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+
+  "pulseaudio": {
+    "format": "󰕾 {volume}",
+    "format-bluetooth": "󰕾 {volume}",
+    "format-bluetooth-muted": " ",
+    "format-muted": " ",
+    "format-source-muted": "",
+    "on-click": "pavucontrol"
+  },
+
+  "custom/media": {
+    "format": " {}",
+    "return-type": "json",
+    "max-length": 40,
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+  }
+}

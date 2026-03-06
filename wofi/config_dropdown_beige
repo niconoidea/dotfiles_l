@@ -1,0 +1,20 @@
+theme=
+font=Roboto 11
+hide_search=true
+
+# Better matching “dropdown” sizing
+width=520
+height=200
+lines=5
+columns=1
+
+# Make placement less brittle (comment out x/y to avoid weirdness on different res)
+x=740
+y=440
+
+# QoL + cleaner look
+matching=fuzzy
+insensitive=true
+allow_images=true
+image_size=24
+prompt=

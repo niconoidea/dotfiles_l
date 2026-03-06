@@ -1,0 +1,58 @@
+/* Scheme: dark gray/black + gray text + beige accent */
+@define-color bg        #0B0B0C;
+@define-color bg_alt    #111113;
+@define-color border    #2A2A2A;
+@define-color fg        #CFCFCF;
+@define-color fg_dim    #BEBEBE;
+@define-color accent    #D6C3A5;
+@define-color accent2   #BFA98A;
+
+window {
+  margin: 0;
+  border: 1px solid @border;
+  background-color: @bg;
+}
+
+#input {
+  /* keep search hidden (your config does hide_search=true), but if it shows it should match */
+  margin: -1000px 8px;
+  border: 1px solid @border;
+  color: @fg;
+  background-color: @bg_alt;
+}
+
+#outer-box {
+  margin: 8px;
+  border: none;
+  background-color: transparent;
+}
+
+#inner-box {
+  margin: 0;
+  border: none;
+  background-color: transparent;
+}
+
+#scroll {
+  margin: 0;
+  border: none;
+}
+
+#entry {
+  margin: 2px 0;
+  padding: 8px 10px;
+  background-color: transparent;
+}
+
+#text {
+  margin: 0;
+  color: @fg_dim;
+}
+
+#entry:selected {
+  background-color: @accent;
+}
+
+#entry:selected #text {
+  color: @bg;
+}

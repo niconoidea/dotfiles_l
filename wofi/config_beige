@@ -1,0 +1,25 @@
+# No automatic sorting
+sort_order=none
+
+# Use as app launcher
+show=drun
+prompt=Search…
+
+# Font
+font=Roboto 11
+
+# Size (keep it compact but usable)
+width=500
+height=260
+lines=8
+columns=1
+
+# Quality-of-life
+matching=fuzzy
+insensitive=true
+allow_images=true
+image_size=24
+
+# Use our theme file
+style=~/.config/wofi/style_beige.css
+

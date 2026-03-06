@@ -7,3 +7,5 @@ swaylock
 waybar
 foot
 wofi
+
+and zsh install script

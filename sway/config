@@ -37,6 +37,7 @@ set $browser flatpak run app.zen_browser.zen
 set $notes flatpak run md.obsidian.Obsidian
 set $powermenu ~/.config/waybar/scripts/powermenu.sh
 set $file-manager thunar
+set $powerprofilesmenu ~/.config/sway/scripts/powerprofilesmenu.sh
 
 ### clion kill ###
 
@@ -124,8 +125,11 @@ input "type:keyboard" {
     # Start your notes app
     bindsym $mod+o exec $notes
 
+    # system menu
+    bindsym $mod+m exec $powermenu
+
     # powermenu
-    bindsym $mod+p exec $powermenu
+    bindsym $mod+p exec $powerprofilesmenu
 
     # show cliphist
     bindsym $mod+c exec "cliphist list | wofi --show dmenu -i | cliphist decode | wl-copy" 

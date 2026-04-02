@@ -13,6 +13,7 @@ x=740
 y=440
 
 # QoL + cleaner look
+sort_order=default
 matching=fuzzy
 insensitive=true
 allow_images=true
